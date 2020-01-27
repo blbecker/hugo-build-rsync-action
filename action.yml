@@ -1,0 +1,25 @@
+name:                 "Hugo Build and RSync"
+description:          "Perform a hugo build and rsync the output to a remote host"
+
+inputs:
+  destination_host:
+    description:      "The hostname of the host to rsync to"
+    required:         true
+  destination_path:
+    description:      "The directory on the remote host to rsync to"
+    required:         true
+  deployment_key:
+    description:      "SSH Private key to use for deployment"
+    required:         true
+  deployment_user:
+    description:      "The user with which to rsync the website to destination"
+    required:         true
+
+runs:
+  using:              'docker'
+  image:              'Dockerfile'
+  args:
+    - ${{ inputs.deployment_user }}
+    - ${{ inputs.destination_host }}
+    - ${{ inputs.destination_path }}
+    - ${{ inputs.deployment_key }}

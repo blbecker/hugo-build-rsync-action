@@ -10,6 +10,9 @@ echo "${INPUT_DEPLOYMENT_KEY}" | base64 -d >> "/root/.ssh/id_rsa" && \
 
 cd "${PROJECT_DIR}" && rm -rf public/
 
+export BRANCH=$(git rev-parse --abbrev-ref HEAD)
+export GIT_SHA=$(git rev-parse --verify HEAD --short)
+
 git submodule init && git submodule update --recursive
 
 hugo

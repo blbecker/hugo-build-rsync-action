@@ -1,5 +1,9 @@
 name:               "Hugo Build and RSync"
+author:             Benjamin Becker
 description:        "Perform a hugo build and rsync the output to a remote host"
+branding:
+  icon:             arrow-right
+  color:            purple
 
 inputs:
   destination_host:

@@ -9,7 +9,7 @@ ENV GOROOT /usr/lib/go
 ENV GOPATH /opt/go
 ENV PATH /opt/go/bin:$PATH
 
-RUN apk add --no-cache git make musl-dev go g++ rsync bash openssh bind-tools
+RUN apk add --no-cache git make musl-dev go g++ rsync bash openssh
 
 RUN mkdir -p "/root/.ssh" && chmod 700 "/root/.ssh"
 

@@ -21,7 +21,7 @@ inputs:
 
 runs:
   using:            'docker'
-  image:            'docker://blbecker/hugo-deploy:release-v0.2'
+  image:            'docker://blbecker/hugo-deploy:release-v0.3'
   args:
     - ${{ inputs.deployment_user }}
     - ${{ inputs.destination_host }}
